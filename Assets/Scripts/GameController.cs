@@ -6,33 +6,33 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
     //power button
-    Button powerButton;
-    Text buttonText;
+    public Button powerButton;
+    public Text buttonText;
 
     //informative text
-    Text informativeText;
+    public Text informativeText;
 
     //electricity generated
-    Text electricityGenerated;
+    public Text electricityGenerated;
 
     //river speed
-    Slider flowSlider;
-    Text galonsOfWater;
+    public Slider flowSlider;
+    public Text galonsOfWater;
     double flow = 391788.9;
     double Originalflow = 391788.9;
 
     //turbine controller
-    TurbineController turb;
+    public TurbineController turb;
 
     //waterfall controller
-    WaterfallController wat;
-    SprayController spray;
+    public WaterfallController wat;
+    public SprayController spray;
 
     //comparedToHoover text
-    Text comparedToHoover;
+    public Text comparedToHoover;
 
     //camera
-    Camera cam;
+    public Camera cam;
     //camera positions
     public GameObject[] camPositions = new GameObject[5];
 
@@ -46,21 +46,15 @@ public class GameController : MonoBehaviour {
     public GameObject powerLines;
     public GameObject transformer;
 
-    void Start () {
-        powerButton = GameObject.FindGameObjectWithTag("PowerButton").GetComponent<Button>();
-        informativeText = GameObject.FindGameObjectWithTag("InformativeText").GetComponent<Text>();
-        electricityGenerated = GameObject.FindGameObjectWithTag("ElectricityGeneratedText").GetComponent<Text>();
-        galonsOfWater = GameObject.FindGameObjectWithTag("RiverSpeedText").GetComponent<Text>();
-        flowSlider = GameObject.FindGameObjectWithTag("RiverSpeedSlider").GetComponent<Slider>();
-        turb = GameObject.FindGameObjectWithTag("TurbineController").GetComponent<TurbineController>();
-        wat = GameObject.FindGameObjectWithTag("WaterfallController").GetComponent<WaterfallController>();
-        spray = GameObject.FindGameObjectWithTag("SprayController").GetComponent<SprayController>();
-        cam = GameObject.FindGameObjectWithTag("DamCamera").GetComponent<Camera>();
-        comparedToHoover = GameObject.FindGameObjectWithTag("ComparedToHoover").GetComponent<Text>();
-        buttonText = powerButton.GetComponentInChildren<Text>();
+    public GameObject player;
+   
+
+    private void Start()
+    {
+        Slide1();
     }
-	
-	void Update () {
+
+    void Update () {
 
         //player controls
         if(Input.GetKeyDown(KeyCode.RightArrow) && slides<10)
@@ -71,6 +65,12 @@ public class GameController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftArrow) && slides > 1)
         {
             slides--;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q) && slides == 10)
+        {
+            cam.gameObject.SetActive(false);
+            player.SetActive(true);
         }
 
         //button listener for turning on the turbines
@@ -177,13 +177,22 @@ public class GameController : MonoBehaviour {
         {
             turb.on = false;
         }
-
-        if(slides == 10 && !testSlideFormat)
+        
+        if(slides < 10)
         {
+            testSlideFormat = false;
+        }
+
+        if (slides == 10 && !testSlideFormat)
+        {
+            turb.on = false;
             spray.on = false;
             wat.on = false;
             flowSlider.value = 0;
             testSlideFormat = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
         }
 
     }
@@ -207,7 +216,7 @@ public class GameController : MonoBehaviour {
         testSlideFormat = false;
         cam.transform.position = camPositions[0].transform.position;
         cam.transform.LookAt(dam.transform.position);
-        informativeText.text = "This is a dam, it converts the energy of moving water into Mechanical Energy and then our Hydroelectric Generater converts mechanical energy into electricity (Electrical Energy)";
+        informativeText.text = "This is a dam. It converts the energy of moving water into Mechanical Energy and then our Hydroelectric Generater converts mechanical energy into electricity (Electrical Energy)";
         galonsOfWater.text = "";
         electricityGenerated.text = "";
         comparedToHoover.text = "";
@@ -325,7 +334,7 @@ public class GameController : MonoBehaviour {
     {
         cam.transform.position = camPositions[0].transform.position;
         cam.transform.LookAt(dam.transform.position);
-        informativeText.text = "Thank you for reading! Please enjoy playing with the slider to increase and decrease flow, the button for turning the dam on and off, and see how much flow you can create!";
+        informativeText.text = "Thank you for reading! Please enjoy playing with the slider to increase and decrease flow, the button for turning the dam on and off, and see how much flow you can create! Press Q to end.";
 
         flowSlider.gameObject.SetActive(true);
         galonsOfWater.text = "Current Flow: " + string.Format("{0:n0}", flow) + " L/S";
