@@ -1,53 +1,53 @@
 State,Hydropower (GWh),Hydropower (GW),Hydropower (Count of Sites)
-Alabama,"4,103",1,"2,435"
-Alaska,"23,676",5,"3,053"
-Arizona,"1,303",0,"1,958"
-Arkansas,"6,093",1,"3,268"
-California,"30,024",7,"9,692"
-Colorado,"7,789",2,"5,060"
+Alabama,4,103,1,"2,435"
+Alaska,23,676,5,"3,053"
+Arizona,1,303,0,"1,958"
+Arkansas,6,093,1,"3,268"
+California,30,024,7,"9,692"
+Colorado,7,789,2,"5,060"
 Connecticut,922,0,659
 Delaware,31,0,25
 District of Columbia,1,0,2
 Florida,682,0,493
-Georgia,"1,988",0,"2,100"
-Hawaii,"2,602",1,437
-Idaho,"18,758",4,"6,706"
-Illinois,"4,883",1,"1,330"
-Indiana,"2,394",1,"1,142"
-Iowa,"2,818",1,"2,398"
-Kansas,"2,508",1,"3,201"
-Kentucky,"4,255",1,"1,394"
-Louisiana,"2,423",1,934
-Maine,"3,916",1,"1,373"
+Georgia,1,988,0,"2,100"
+Hawaii,2,602,1,437
+Idaho,18,758,4,"6,706"
+Illinois,4,883,1,"1,330"
+Indiana,2,394,1,"1,142"
+Iowa,2,818,1,"2,398"
+Kansas,2,508,1,"3,201"
+Kentucky,4,255,1,"1,394"
+Louisiana,2,423,1,934
+Maine,3,916,1,"1,373"
 Maryland,814,0,491
-Massachusetts,"1,197",0,560
-Michigan,"1,181",0,"1,942"
-Minnesota,"1,255",0,"1,391"
-Mississippi,"2,211",1,"1,536"
-Missouri,"7,198",2,"5,089"
-Montana,"14,547",3,"6,859"
-Nebraska,"3,142",1,"2,880"
+Massachusetts,1,197",0,560
+Michigan,1,181,0,"1,942"
+Minnesota,1,255,0,"1,391"
+Mississippi,2,211,1,"1,536"
+Missouri,7,198,2,"5,089"
+Montana,14,547,3,"6,859"
+Nebraska,3,142,1,"2,880"
 Nevada,846,0,"1,489"
-New Hampshire,"1,741",0,810
+New Hampshire,1,741,0,810
 New Jersey,549,0,402
-New Mexico,"1,363",0,"1,810"
-New York,"6,711",2,"4,839"
-North Carolina,"3,037",1,"2,131"
+New Mexico,1,363,0,"1,810"
+New York,6,711,2,"4,839"
+North Carolina,3,037",1,"2,131"
 North Dakota,347,0,572
-Ohio,"3,046",1,"1,791"
-Oklahoma,"3,016",1,"2,824"
-Oregon,"18,184",4,"7,993"
-Pennsylvania,"8,368",2,"4,466"
+Ohio,3,046,1,"1,791"
+Oklahoma,3,016,1,"2,824"
+Oregon,18,184,4,"7,993"
+Pennsylvania,8,368,2,"4,466"
 Rhode Island,59,0,86
-South Carolina,"1,889",0,889
-South Dakota,"1,047",0,"1,712"
-Tennessee,"5,745",1,"2,610"
-Texas,"3,006",1,"4,366"
-Utah,"3,528",1,"3,394"
-Vermont,"1,710",0,"1,207"
-Virginia,"3,657",1,"2,601"
-Washington,"27,249",6,"7,310"
-West Virginia,"4,408",1,"1,711"
-Wisconsin,"2,287",1,"1,863"
-Wyoming,"4,445",1,"2,842"
+South Carolina,1,889,0,889
+South Dakota,1,047,0,"1,712"
+Tennessee,5,745,1,"2,610"
+Texas,3,006,1,"4,366"
+Utah,3,528,1,"3,394"
+Vermont,1,710,0,"1,207"
+Virginia,3,657,1,"2,601"
+Washington,27,249,6,"7,310"
+West Virginia,4,408,1,"1,711"
+Wisconsin,2,287,1,"1,863"
+Wyoming,4,445,1,"2,842"
 TOTAL,"2,58,953",60,"1,28,126"

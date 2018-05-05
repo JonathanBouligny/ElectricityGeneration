@@ -45,6 +45,10 @@ public class GameController : MonoBehaviour {
     public GameObject waterfall;
     public GameObject powerLines;
     public GameObject transformer;
+    public Text totalUnits;
+    public Text totalCapcaity;
+
+    public Dropdown dd;
 
     public GameObject player;
    
@@ -185,6 +189,8 @@ public class GameController : MonoBehaviour {
 
         if (slides == 10 && !testSlideFormat)
         {
+            totalUnits.text = "";
+            totalCapcaity.text = "";
             turb.on = false;
             spray.on = false;
             wat.on = false;
@@ -222,7 +228,10 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
-    }
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
+}
 
     void Slide2()
     {
@@ -237,6 +246,9 @@ public class GameController : MonoBehaviour {
         flowSlider.gameObject.SetActive(false);
         spray.on = true;
         wat.on = true;
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide3()
@@ -250,6 +262,9 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide4()
@@ -263,6 +278,9 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide5()
@@ -276,6 +294,9 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide6()
@@ -289,6 +310,9 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide7()
@@ -302,6 +326,9 @@ public class GameController : MonoBehaviour {
         electricityGenerated.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide8()
@@ -315,6 +342,9 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide9()
@@ -328,6 +358,9 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dd.gameObject.SetActive(false);
+        totalUnits.text = "";
+        totalCapcaity.text = "";
     }
 
     void Slide10()
@@ -346,5 +379,7 @@ public class GameController : MonoBehaviour {
         
         powerButton.gameObject.SetActive(true);
         comparedToHoover.text = "Watts Compared to the Hoover Dam: " + string.Format("{0:n0}", ( (.6 * (224 * flow * 9.8)) / 4000000000) * 100) + "%";
+
+        dd.gameObject.SetActive(true);
     }
 }
