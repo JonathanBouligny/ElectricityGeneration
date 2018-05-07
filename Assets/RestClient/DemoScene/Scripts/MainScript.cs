@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
 using Models;
 using Proyecto26;
@@ -22,11 +23,11 @@ public class MainScript : MonoBehaviour {
             EditorUtility.DisplayDialog ("Todos", JsonHelper.ArrayToJsonString<Todo>(res, true), "Ok");
             return RestClient.GetArray<User>(basePath + "/users");
 		}).Then(res => {
-			EditorUtility.DisplayDialog ("Users", JsonHelper.ArrayToJsonString<User>(res, true), "Ok");
+            EditorUtility.DisplayDialog ("Users", JsonHelper.ArrayToJsonString<User>(res, true), "Ok");
 
 
-			// We can add specific options and override default headers for a request
-			requestOptions = new RequestHelper { 
+            // We can add specific options and override default headers for a request
+            requestOptions = new RequestHelper { 
 				url = basePath + "/photos",
 				headers = new Dictionary<string, string> {
 					{ "Authorization", "Other token..." }
@@ -34,24 +35,24 @@ public class MainScript : MonoBehaviour {
 			};
 			return RestClient.GetArray<Photo>(requestOptions);
 		}).Then(res => {
-			EditorUtility.DisplayDialog("Header", requestOptions.GetHeader("Authorization"), "Ok");
+            EditorUtility.DisplayDialog("Header", requestOptions.GetHeader("Authorization"), "Ok");
 
-			// And later we can clean the default headers for all requests
-			RestClient.CleanDefaultHeaders();
+            // And later we can clean the default headers for all requests
+            RestClient.CleanDefaultHeaders();
 
 		}).Catch(err => EditorUtility.DisplayDialog ("Error", err.Message, "Ok"));
 	}
 
 	public void Post(){
-		
-		RestClient.Post<Models.Post>(basePath + "/posts", new {
+
+        RestClient.Post<Models.Post>(basePath + "/posts", new {
 			title = "foo",
 			body = "bar",
 			userId = 1
 		})
-		.Then(res => EditorUtility.DisplayDialog ("Success", JsonUtility.ToJson(res, true), "Ok"))
-		.Catch(err => EditorUtility.DisplayDialog ("Error", err.Message, "Ok"));
-	}
+        .Then(res => EditorUtility.DisplayDialog ("Success", JsonUtility.ToJson(res, true), "Ok"))
+        .Catch(err => EditorUtility.DisplayDialog ("Error", err.Message, "Ok"));
+    }
 
 	public void Put(){
 
@@ -61,11 +62,11 @@ public class MainScript : MonoBehaviour {
 			userId = 1
 		}, (err, res, body) => {
 			if(err != null){
-				EditorUtility.DisplayDialog ("Error", err.Message, "Ok");
-			}
+                EditorUtility.DisplayDialog ("Error", err.Message, "Ok");
+            }
 			else{
-				EditorUtility.DisplayDialog ("Success", JsonUtility.ToJson(body, true), "Ok");
-			}
+                EditorUtility.DisplayDialog ("Success", JsonUtility.ToJson(body, true), "Ok");
+            }
 		});
 	}
 
@@ -73,11 +74,13 @@ public class MainScript : MonoBehaviour {
 
         RestClient.Delete(basePath + "/posts/1", (err, res) => {
 			if(err != null){
-				EditorUtility.DisplayDialog ("Error", err.Message, "Ok");
-			}
+                EditorUtility.DisplayDialog ("Error", err.Message, "Ok");
+            }
 			else{
-				EditorUtility.DisplayDialog ("Success", "Status: " + res.statusCode.ToString(), "Ok");
-			}
+                EditorUtility.DisplayDialog ("Success", "Status: " + res.statusCode.ToString(), "Ok");
+            }
 		});
 	}
 }
+
+#endif
