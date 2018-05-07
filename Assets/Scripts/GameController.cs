@@ -48,7 +48,10 @@ public class GameController : MonoBehaviour {
     public Text totalUnits;
     public Text totalCapcaity;
 
+    public TransitionsBetweenPowers trans;
+
     public Dropdown dd;
+    public Text dropdownText;
 
     public GameObject player;
    
@@ -75,6 +78,7 @@ public class GameController : MonoBehaviour {
         {
             cam.gameObject.SetActive(false);
             player.SetActive(true);
+            trans.water.Stop();
         }
 
         //button listener for turning on the turbines
@@ -191,6 +195,7 @@ public class GameController : MonoBehaviour {
         {
             totalUnits.text = "";
             totalCapcaity.text = "";
+            dropdownText.gameObject.SetActive(true);
             turb.on = false;
             spray.on = false;
             wat.on = false;
@@ -228,6 +233,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";
@@ -244,6 +250,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         spray.on = true;
         wat.on = true;
         dd.gameObject.SetActive(false);
@@ -262,6 +269,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";
@@ -278,6 +286,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";
@@ -294,6 +303,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";
@@ -310,6 +320,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";
@@ -326,6 +337,7 @@ public class GameController : MonoBehaviour {
         electricityGenerated.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";
@@ -342,6 +354,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";
@@ -358,6 +371,7 @@ public class GameController : MonoBehaviour {
         comparedToHoover.text = "";
         powerButton.gameObject.SetActive(false);
         flowSlider.gameObject.SetActive(false);
+        dropdownText.gameObject.SetActive(false);
         dd.gameObject.SetActive(false);
         totalUnits.text = "";
         totalCapcaity.text = "";

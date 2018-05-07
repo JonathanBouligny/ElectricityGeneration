@@ -15,10 +15,14 @@ public class SolarVieController : MonoBehaviour {
 	GameObject mainCam;
     public GameObject player;
 
+    bool quit = false;
+
+    public TransitionsBetweenPowers trans;
     public CustomRestController crc;
 
 	// Use this for initialization
 	void Awake () {
+        quit = false;
 		view1= GameObject.FindGameObjectWithTag("view1");
 		view2= GameObject.FindGameObjectWithTag("view2");
 		view3= GameObject.FindGameObjectWithTag("view3");
@@ -31,13 +35,14 @@ public class SolarVieController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         setCameraPosotion(currentStep);
-       // crc = new CustomRestController();
         crc.wipe();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.RightArrow) && currentStep < 7)
+        quit = false;
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) && currentStep < 6)
 		{
 			currentStep++;
 		}
@@ -47,8 +52,13 @@ public class SolarVieController : MonoBehaviour {
 			currentStep--;
 		}
 
+        Debug.Log(currentStep);
+
         if(currentStep == 6 && Input.GetKeyDown(KeyCode.Q))
         {
+            quit = true;
+            crc.wipe();
+            trans.electric.Stop();
             mainCam.SetActive(false);
             player.SetActive(true);
         }
@@ -92,8 +102,13 @@ public class SolarVieController : MonoBehaviour {
         }
         else if (step == 6) {
 			mainCam.transform.position = view6.transform.position;
-            crc.dd.gameObject.SetActive(true);
-            crc.infoMsgSolar.gameObject.SetActive(true);
+            if(!quit)
+            {
+                crc.dd.gameObject.SetActive(true);
+                crc.infoMsgSolar.gameObject.SetActive(true);
+            }
+
+            
             //mainCam.transform.LookAt(view6.transform.position);
         }
     }

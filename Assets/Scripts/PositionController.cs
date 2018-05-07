@@ -31,6 +31,8 @@ public class PositionController : MonoBehaviour
 
     double pow;
 
+    public TransitionsBetweenPowers trans;
+
     // Use this for initialization
     void Start()
     {
@@ -131,6 +133,7 @@ public class PositionController : MonoBehaviour
         {
             solarCam.SetActive(false);
             player.SetActive(true);
+            trans.wind.Stop();
         }
 
     }
