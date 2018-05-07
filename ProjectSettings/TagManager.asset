@@ -3,7 +3,48 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Level5WaterFall
+  - Dam
+  - view6
+  - Level2WaterFall
+  - total_installs_with_cost
+  - Level1WaterFall
+  - Level3WaterFall
+  - solarCamera
+  - WaterfallController
+  - view2
+  - RiverSpeedSlider
+  - PowerButton
+  - total_capacity
+  - InformativeText
+  - ElectricityGeneratedText
+  - ComparedToHoover
+  - avg_cost_cap_weight
+  - Level4WaterFall
+  - view3
+  - avg_cost_pw
+  - view5
+  - sunlight
+  - RiverSpeedText
+  - total_Installs
+  - view4
+  - view1
+  - DamCamera
+  - TurbineController
+  - SprayController
+  - WindCam
+  - Info
+  - myPanel
+  - Vel
+  - warn3
+  - Dia
+  - warn2
+  - Eff
+  - warn1
+  - power
+  - Pivot
+  - WindTurbine
   layers:
   - Default
   - TransparentFX

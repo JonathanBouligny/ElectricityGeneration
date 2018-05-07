@@ -18,15 +18,18 @@ public class CustomRestController : MonoBehaviour {
 	public Text avg_cost_pw;
 	public Text avg_cost_cap_weight;
 
+    public GameObject loadingImage;
+
 	// Use this for initialization
 	void Start () {
-		/*total_installs = GameObject.FindGameObjectWithTag("total_installs").GetComponent<Text>();
+        loadingImage.SetActive(false);
+        /*total_installs = GameObject.FindGameObjectWithTag("total_installs").GetComponent<Text>();
 		total_installs_with_cost = GameObject.FindGameObjectWithTag("total_installs_with_cost").GetComponent<Text>();
 		total_capacity = GameObject.FindGameObjectWithTag("total_capacity").GetComponent<Text>();
 		avg_cost_pw = GameObject.FindGameObjectWithTag("avg_cost_pw").GetComponent<Text>();
 		avg_cost_cap_weight = GameObject.FindGameObjectWithTag("avg_cost_cap_weight").GetComponent<Text>();
 	*/
-		populateList ();
+        populateList ();
 	}
 	/*RestClient.Get ("https://jsonplaceholder.typicode.com/posts/1").Then (response => {
 			Debug.Log ("Update response "+ response.text);
@@ -150,13 +153,27 @@ public class CustomRestController : MonoBehaviour {
 
 	public void getSolarData(string stateCode){
 		string requestURL = baseURL +""+ stateCode;
-		Debug.Log (requestURL);
+        loadingImage.SetActive(true);
+
+        Debug.Log (requestURL);
 		RestClient.Get (requestURL).Then (response => {
-			Response res = JsonUtility.FromJson<Response>(response.text);
+            loadingImage.SetActive(false);
+            Response res = JsonUtility.FromJson<Response>(response.text);
 			total_installs.text = "Total Number Of Installs  "+ res.result.total_installs;
 			total_capacity.text = "Total Capacity  "+ res.result.total_capacity ;
 			avg_cost_pw.text = "Avg Cost Per Watt  "+ res.result.avg_cost_pw ;
 		});
 	}
+
+    public void wipe()
+    {
+        dd.gameObject.SetActive(false);
+
+        total_installs.text = "";
+        total_installs_with_cost.text = "";
+        total_capacity.text = "";
+        avg_cost_pw.text = "";
+        avg_cost_cap_weight.text = "";
+    }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SolarVieController : MonoBehaviour {
 
@@ -13,6 +14,8 @@ public class SolarVieController : MonoBehaviour {
 	GameObject view6;
 	GameObject mainCam;
     public GameObject player;
+
+    public CustomRestController crc;
 
 	// Use this for initialization
 	void Awake () {
@@ -28,6 +31,8 @@ public class SolarVieController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         setCameraPosotion(currentStep);
+       // crc = new CustomRestController();
+        crc.wipe();
     }
 	
 	// Update is called once per frame
@@ -56,27 +61,39 @@ public class SolarVieController : MonoBehaviour {
 		Debug.Log ("12");
 		if (step == 1) {
 			mainCam.transform.position = view1.transform.position;
-			//mainCam.transform.LookAt(view1.transform.position);
-		} else if (step == 2) {
+            crc.wipe();
+            //mainCam.transform.LookAt(view1.transform.position);
+        }
+        else if (step == 2) {
 			mainCam.transform.position = view2.transform.position;
+            crc.wipe();
 
-			//mainCam.transform.LookAt(view2.transform.position);
-		} else if (step == 3) {
+            //mainCam.transform.LookAt(view2.transform.position);
+        }
+        else if (step == 3) {
 			mainCam.transform.position = view3.transform.position;
+            crc.wipe();
 
-			//mainCam.transform.LookAt(view3.transform.position);
-		} else if (step == 4) {
+            //mainCam.transform.LookAt(view3.transform.position);
+        }
+        else if (step == 4) {
 			mainCam.transform.position = view4.transform.position;
+            crc.wipe();
 
-			//mainCam.transform.LookAt(view4.transform.position);
-		} else if (step == 5) {
+
+            //mainCam.transform.LookAt(view4.transform.position);
+        }
+        else if (step == 5) {
 			mainCam.transform.position = view5.transform.position;
+            crc.wipe();
 
-			//mainCam.transform.LookAt(view5.transform.position);
-		} else if (step == 6) {
+
+            //mainCam.transform.LookAt(view5.transform.position);
+        }
+        else if (step == 6) {
 			mainCam.transform.position = view6.transform.position;
-
-			//mainCam.transform.LookAt(view6.transform.position);
-		}
-	}
+            crc.dd.gameObject.SetActive(true);
+            //mainCam.transform.LookAt(view6.transform.position);
+        }
+    }
 }
