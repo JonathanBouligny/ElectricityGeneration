@@ -18,6 +18,8 @@ public class CustomRestController : MonoBehaviour {
 	public Text avg_cost_pw;
 	public Text avg_cost_cap_weight;
 
+    public Text infoMsgSolar;
+
     public GameObject loadingImage;
 
 	// Use this for initialization
@@ -168,7 +170,7 @@ public class CustomRestController : MonoBehaviour {
     public void wipe()
     {
         dd.gameObject.SetActive(false);
-
+        infoMsgSolar.gameObject.SetActive(false);
         total_installs.text = "";
         total_installs_with_cost.text = "";
         total_capacity.text = "";

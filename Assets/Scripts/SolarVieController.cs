@@ -93,6 +93,7 @@ public class SolarVieController : MonoBehaviour {
         else if (step == 6) {
 			mainCam.transform.position = view6.transform.position;
             crc.dd.gameObject.SetActive(true);
+            crc.infoMsgSolar.gameObject.SetActive(true);
             //mainCam.transform.LookAt(view6.transform.position);
         }
     }

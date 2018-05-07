@@ -45,6 +45,7 @@ TagManager:
   - power
   - Pivot
   - WindTurbine
+  - infoMsgSolar
   layers:
   - Default
   - TransparentFX
