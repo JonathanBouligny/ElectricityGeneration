@@ -56,6 +56,56 @@ This simulation also explains different parts and devices needed to generate, st
 
 _**Photovoltaic**_ refers to the process of turning the energy of the Sun directly into electrical current through the use of photovoltaic cells. Photovoltaic technology is relatively new; as a viable energy source, it is less than _50 years old_. However, it has great potential for the future. As a source of energy, sunlight is free, its supplies are unlimited and it is available in the majority of areas of the world.
 
+REST API-
+We have integrated with the NREL webservices to get the real-time status of the solar photovoltaic market in the U.S. Please find the link below for the API.
+
+<a href="https://developer.nrel.gov/docs/solar/openpv/installs_index/">NREL Photovoltaic Data</a>
+
+<h3>Request</h3>
+GET /api/solar/open_pv/installs/index?api_key=APY_KEY&state=TX
+
+<h3>Sample Response</h3>
+
+{
+  "inputs": {
+    "state": "CA",
+    "minsize": "10",
+    "maxsize": "100",
+    "pagenum": "1",
+    "nppage": "25",
+    "sort": "size_kw",
+    "order": "DESC"
+  },
+  "metadata": {
+    "version": "2.0.0",
+    "resultset": {
+      "total_pages": 939,
+      "count": 23471,
+      "limit": 25,
+      "offset": 0
+    }
+  },
+  "status": 200,
+  "result": [
+    {
+      "_id": "5049033e27a49b219200a142",
+      "cost": 391488.0,
+      "date_installed": 1281506400,
+      "size_kw": 100.0,
+      "state": "CA",
+      "zipcode": "91355"
+    },
+    {
+      "_id": "53fcc75427a49b2255377b7b",
+      "cost": 576041.0,
+      "date_installed": 1370498400,
+      "size_kw": 99.96,
+      "state": "CA",
+      "zipcode": "93725"
+    
+  ]
+}
+
 
 
 ### 3. Wind Turbine
