@@ -106,6 +106,30 @@ GET /api/solar/open_pv/installs/index?api_key=APY_KEY&state=TX
   ]
 }
 
+<h3> Request </h3>
+GET /api/solar/open_pv/installs/summaries?api_key=APY_KEY&state=TX
+<h3> Sample Response </h3>
+
+{
+  "inputs": {
+    "state": "CA",
+    "minsize": "10",
+    "maxsize": "100"
+  },
+  "metadata": {
+    "version": "2.0.0",
+    "resultset": {}
+  },
+  "status": 200,
+  "result": {
+    "avg_cost_cap_weight": 6.329,
+    "avg_cost_pw": 6.322,
+    "best_avg_cost_pw": 4.065,
+    "total_capacity": 443.6257,
+    "total_installs": 23471,
+    "total_installs_with_cost": 22235
+  }
+}
 
 
 ### 3. Wind Turbine
