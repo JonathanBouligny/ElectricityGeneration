@@ -61,4 +61,25 @@ _**Photovoltaic**_ refers to the process of turning the energy of the Sun direct
 ### 3. Wind Turbine
 This simulation explains the various parts that constitute a Wind Turbine and allows the user to interact with various parameters of a wind turbine size and see the correspondinding effect on electrcity generated. The wind turbine is shown below:
 
-![wind_view2](/Screenshots/Wind1.png)
+![wind_view1](/Screenshots/Wind1.png)
+
+
+The entire model of the turbine and the internals of the wind turbine (shown below) was created from scatch in Unity, [blender](https://www.blender.org/) , and [ProBuilder](https://assetstore.unity.com/packages/tools/modeling/probuilder-111418).
+
+The internals (source: https://www.saveonenergy.com/how-wind-turbines-work/) of the Wind turbine, a user get to see the individual parts and their use in the simulation. 
+
+![wind_view2](/Screenshots/Wind2.png)
+
+After, the user has explored all the parts of the turbine, he/she can change the various parameters of the wind mill such as _efficiency_, _blade diameter_ and _wind velocity_ to the see the corresponding effect on electricity generated:
+
+![wind_view3](/Screenshots/Wind3.png)
+
+The data for efficiency, diameter and velocity is based on actual scietific data used to design the wind turbines in the real-world.
+
+Max **Efficiency** for turbine can be **59.26%** due to laws of physics. This is known as **Betz limit** explained [here](http://www.wind-power-program.com/turbine_characteristics.htm) and [here](http://datagenetics.com/blog/june12017/index.html), after the scientist who discovered this phenomena. Most turbines are able to have efficiency of 0.30(30%) to 0.45 (45%) as explained [here](http://www.ewea.org/wind-energy-basics/faq/) and [here](https://www.wind-watch.org/faq-output.php).
+
+The **diameter** of commercially availble wind turbines vary between 31m to 47m roughly. As mentioned on [this](http://www.aweo.org/windmodels.html) page.
+
+Finally, the **velocity** of the wind also varies throughout the day. The turbines are designed to function at certain wind speed to generate electricity. These limits are described on [this](http://www.wind-power-program.com/turbine_characteristics.htm) page and the actual values have been used in the simulation. At very high or ver low speed the turbine stops rotating in the simulation. This can be adjusted by using '+' and '-' buttons in the simulation.
+
+The formular to calculate the _**Power Generated**_ uses the values above and can be found on [this](https://www.engineeringtoolbox.com/wind-power-d_1214.html) and [this](https://www.raeng.org.uk/publications/other/23-wind-turbine) page.
