@@ -132,11 +132,11 @@ GET /api/solar/open_pv/installs/summaries?api_key=APY_KEY&state=TX
 }
 
 <h3> Response Attributes Explained </h3>
-<b>avg_cost_cap_weight</b> - Average cost ($ per watt) for all matched systems calculated as the total cost of all systems divided by the total capacity of all systems.
-<b>avg_cost_pw </b>- The average cost ($ per watt) for all matched systems calculated as the mean of each system's cost per watt.
-<b>best_avg_cost_pw</b> - Average cost ($ per watt) for the most recent year with at least 1 install.
-<b>total_capacity</b> - Total capacity (Mw).
-<b>total_installs</b> - Total number of installs.
+<b>avg_cost_cap_weight</b> - Average cost ($ per watt) for all matched systems calculated as the total cost of all systems divided by the total capacity of all systems.</br>
+<b>avg_cost_pw </b>- The average cost ($ per watt) for all matched systems calculated as the mean of each system's cost per watt.</br>
+<b>best_avg_cost_pw</b> - Average cost ($ per watt) for the most recent year with at least 1 install.</br>
+<b>total_capacity</b> - Total capacity (Mw).</br>
+<b>total_installs</b> - Total number of installs.</br>
 <b>total_installs_with_cost</b> - Total number of installs with cost attributes populated.
 
 ### 3. Wind Turbine
