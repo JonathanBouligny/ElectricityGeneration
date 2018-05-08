@@ -13,6 +13,9 @@ To educate children how electricity is generated from natural sources such as wi
 ### Project Description
 This project was desined in **Unity3d** and is targeted platform is a Windows PC app _(It can be ported to other OS by changing the build-settings)_. The project has 3 simulations of **_water turbine_**, **_solar panel_** and a **_wind turbine_**. Each of these simulations can be explored in any order to learn more about how they functions in the real world. The simulation allows the player to explore the scene via the _arrow keys_ and certain interactions requires clicking using mouse buttons. The interactions are displayed on the screen as user interacts with different parts of simulations as described above.
 
+[Video Link](https://www.youtube.com/watch?v=C8P4Ex2WzAs)
+
+
 
 ### 1. Water Turbine/Dam
 The Water turbine shows various information about dams in the United States and allows the user to interact with the turbine to observe generated power. 
