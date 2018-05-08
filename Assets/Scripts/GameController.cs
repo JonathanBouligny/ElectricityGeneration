@@ -123,7 +123,8 @@ public class GameController : MonoBehaviour {
             spray.on = false;
             wat.on = false;
         }
-        informativeText.color = Color.black;
+
+        informativeText.color = Color.red;
 
         electricityGenerated.text = "Dam Off";
         

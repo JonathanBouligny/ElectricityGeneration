@@ -357,5 +357,8 @@ public class PositionController : MonoBehaviour
         boxInternals.SetActive(false);
         infoText.text = "Press Q to quit.";
         cam.transform.position = camPositions[10].transform.position;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 }
